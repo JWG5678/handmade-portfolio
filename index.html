@@ -8,7 +8,7 @@
   :root {
     --paper: #ffffff;
     --ink: #1a1a1a;
-    --order: ["welcome", "about", "timeline", "favdance", "nice", "karaoke", "dirtydancing", "dreamlover"];
+    --order: ["welcome", "about", "timeline", "favdance", "nice", "karaoke", "dirtydancing", "dreamlover", "whiskas"];
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { height: 100%; background: var(--paper); color: var(--ink);
@@ -145,25 +145,43 @@
   @media (max-width: 540px) {
     .dl-grid { grid-template-columns: 1fr; }
   }
+
+  /* ---- whiskas case study page ---- */
+  #whiskas { overflow-y: auto; align-items: flex-start; }
+  .wk-wrap { width: 90vw; max-width: 1100px; margin: 0 auto;
+    padding: 6vh 0 10vh; }
+  .wk-head { text-align: center; margin-bottom: 30px; }
+  .wk-headline { width: min(70%, 520px); height: auto; mix-blend-mode: multiply; }
+  .vid-embed { position: relative; padding-top: 56.25%; width: 100%; }
+  .vid-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    border: 0; }
+  .wk-film { margin-bottom: 44px; }
+  .wk-intro { display: flex; gap: 3vw; margin-bottom: 40px; align-items: flex-start; }
+  .wk-textA { flex: 0 0 42%; width: 42%; height: auto; mix-blend-mode: multiply; }
+  .wk-intro-right { flex: 1; display: flex; flex-direction: column; gap: 24px; }
+  .wk-hero { width: 100%; height: auto; display: block; }
+  .wk-textB { width: 80%; height: auto; mix-blend-mode: multiply; align-self: center; }
+  .wk-key { width: 100%; height: auto; display: block; margin-bottom: 30px; }
+  .wk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+    margin-bottom: 50px; }
+  .wk-img { width: 100%; height: auto; object-fit: cover; display: block; }
+  .wk-full, .wk-wide { grid-column: 1 / -1; }
+  .wk-half { grid-column: span 1; }
+  .wk-sub { font-family: Georgia, serif; font-weight: normal; font-size: 14px;
+    letter-spacing: 3px; text-transform: uppercase; color: #999;
+    text-align: center; margin-bottom: 20px; }
+  .wk-socials { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .wk-social { width: 100%; }
+  @media (max-width: 760px) {
+    .wk-intro { flex-direction: column; }
+    .wk-textA { flex: none; width: 70%; }
+    .wk-grid { grid-template-columns: 1fr; }
+    .wk-half { grid-column: 1 / -1; }
+    .wk-socials { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
-
-<button class="ham" id="hamBtn" aria-label="menu"><img src="hamburger.png" alt="menu"></button>
-
-<nav class="nav-overlay" id="navOverlay">
-  <button class="nav-close" id="navClose" aria-label="close">&times;</button>
-  <div class="nav-group"><h3>Choreography</h3><button class="nav-link" data-target="welcome">Dreamlover</button>
-<button class="nav-link" data-target="about">Let's Talk About Love</button>
-<button class="nav-link" data-target="timeline">Dirty Dancing</button>
-<button class="nav-link" data-target="karaoke">Karaoke</button>
-</div>
-<div class="nav-group"><h3>Case</h3><button class="nav-link" data-target="about">Nokia</button>
-<button class="nav-link" data-target="timeline">Nike</button>
-<button class="nav-link" data-target="welcome">Whiskas</button>
-</div>
-
-</nav>
 
 <main id="pages">
 <section class="page" id="welcome" data-page="welcome">
@@ -289,6 +307,35 @@
       <img class="dl-photo" src="07-photo01.jpg" alt=""><img class="dl-photo" src="07-photo02.jpg" alt=""><img class="dl-photo" src="07-photo03.jpg" alt=""><img class="dl-photo" src="07-photo04.jpg" alt=""><img class="dl-photo" src="07-photo05.jpg" alt=""><img class="dl-photo" src="07-photo06.jpg" alt=""><img class="dl-photo" src="07-photo07.jpg" alt=""><img class="dl-photo" src="07-photo08.jpg" alt=""><img class="dl-photo" src="07-photo10.jpg" alt=""><img class="dl-photo" src="07-photo11.jpg" alt=""><img class="dl-photo" src="07-photo12.jpg" alt=""><img class="dl-photo" src="07-photo13.jpg" alt="">
     </div>
   </div>
+</section><section class="page" id="whiskas" data-page="whiskas">
+  <div class="wk-wrap">
+    <header class="wk-head">
+      <img class="wk-headline" src="14-headline.png" alt="The brief. Whiskas doesn't kill cats.">
+    </header>
+    <div class="wk-film"><div class="vid-embed"><iframe src="https://player.vimeo.com/video/1197480507?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="Bone Crusher"></iframe></div></div>
+    <div class="wk-intro">
+      <img class="wk-textA" src="14-textA.png" alt="">
+      <div class="wk-intro-right">
+        <img class="wk-hero" src="14-hero.jpg" alt="Bone Crusher can">
+        <img class="wk-textB" src="14-text-B.png" alt="">
+      </div>
+    </div>
+    <img class="wk-key" src="14-img01.jpg" alt="Bone Crusher keyplate">
+    <div class="wk-grid">
+      <img class="wk-img wk-full" src="14-img03.jpg" alt="">
+      <img class="wk-img wk-full" src="14-img04.jpg" alt="">
+      <img class="wk-img wk-full" src="14-img05.jpg" alt="">
+      <img class="wk-img wk-full" src="14-img02.jpg" alt="">
+      <img class="wk-img wk-wide" src="14-img06.jpg" alt="">
+      <img class="wk-img wk-wide" src="14-img07.jpg" alt="">
+      <img class="wk-img wk-wide" src="14-img08.jpg" alt="">
+      <img class="wk-img wk-half" src="14-img09.jpg" alt="">
+      <img class="wk-img wk-half" src="14-img10.jpg" alt="">
+      <img class="wk-img wk-half" src="14-img11.jpg" alt="">
+    </div>
+    <h3 class="wk-sub">Social</h3>
+    <div class="wk-socials"><div class="wk-social"><div class="vid-embed"><iframe src="https://player.vimeo.com/video/1197482727?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="Bone Crusher"></iframe></div></div><div class="wk-social"><div class="vid-embed"><iframe src="https://player.vimeo.com/video/1197482728?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="Bone Crusher"></iframe></div></div><div class="wk-social"><div class="vid-embed"><iframe src="https://player.vimeo.com/video/1197486125?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="Bone Crusher"></iframe></div></div></div>
+  </div>
 </section>
 </main>
 
@@ -298,7 +345,7 @@
 <div class="footer"><img src="footer.png" alt=""></div>
 
 <script>
-  const ORDER = ["welcome", "about", "timeline", "favdance", "nice", "karaoke", "dirtydancing", "dreamlover"];
+  const ORDER = ["welcome", "about", "timeline", "favdance", "nice", "karaoke", "dirtydancing", "dreamlover", "whiskas"];
   let idx = 0;
 
   function show(target) {
@@ -307,7 +354,6 @@
     idx = i;
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.getElementById(ORDER[idx]).classList.add('active');
-    closeNav();
   }
   function next() { show(Math.min(idx + 1, ORDER.length - 1)); }
   function prev() { show(Math.max(idx - 1, 0)); }
@@ -317,17 +363,6 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight') next();
     if (e.key === 'ArrowLeft') prev();
-    if (e.key === 'Escape') closeNav();
-  });
-
-  // nav
-  const overlay = document.getElementById('navOverlay');
-  function openNav() { overlay.classList.add('open'); }
-  function closeNav() { overlay.classList.remove('open'); }
-  document.getElementById('hamBtn').onclick = openNav;
-  document.getElementById('navClose').onclick = closeNav;
-  document.querySelectorAll('.nav-link').forEach(b => {
-    b.onclick = () => show(b.dataset.target);
   });
 
   // timeline drag-to-pan
