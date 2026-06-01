@@ -223,19 +223,19 @@
       <img class="kk-piece kk-deadant" src="06-deadant.png" alt="dead ant">
     </div>
     <div class="kk-grid">
-      <div class="kv-cell"><video class="kv-video" muted loop playsinline preload="none" data-src="06-vid01.mp4"><source data-src="06-vid01.mp4" type="video/mp4"></video><button class="kv-play" aria-label="play">&#9658;</button></div>
-<div class="kv-cell"><video class="kv-video" muted loop playsinline preload="none" data-src="06-vid02.mp4"><source data-src="06-vid02.mp4" type="video/mp4"></video><button class="kv-play" aria-label="play">&#9658;</button></div>
-<div class="kv-cell"><video class="kv-video" muted loop playsinline preload="none" data-src="06-vid03.mp4"><source data-src="06-vid03.mp4" type="video/mp4"></video><button class="kv-play" aria-label="play">&#9658;</button></div>
-<div class="kv-cell"><video class="kv-video" muted loop playsinline preload="none" data-src="06-vid04.mp4"><source data-src="06-vid04.mp4" type="video/mp4"></video><button class="kv-play" aria-label="play">&#9658;</button></div>
-<div class="kv-cell"><video class="kv-video" muted loop playsinline preload="none" data-src="06-vid05.mp4"><source data-src="06-vid05.mp4" type="video/mp4"></video><button class="kv-play" aria-label="play">&#9658;</button></div>
-<div class="kv-cell"><video class="kv-video" muted loop playsinline preload="none" data-src="06-vid06.mp4"><source data-src="06-vid06.mp4" type="video/mp4"></video><button class="kv-play" aria-label="play">&#9658;</button></div>
-<div class="kv-cell"><video class="kv-video" muted loop playsinline preload="none" data-src="06-vid07.mp4"><source data-src="06-vid07.mp4" type="video/mp4"></video><button class="kv-play" aria-label="play">&#9658;</button></div>
-<div class="kv-cell"><video class="kv-video" muted loop playsinline preload="none" data-src="06-vid08.mp4"><source data-src="06-vid08.mp4" type="video/mp4"></video><button class="kv-play" aria-label="play">&#9658;</button></div>
-<div class="kv-cell"><video class="kv-video" muted loop playsinline preload="none" data-src="06-vid09.mp4"><source data-src="06-vid09.mp4" type="video/mp4"></video><button class="kv-play" aria-label="play">&#9658;</button></div>
-<div class="kv-cell"><video class="kv-video" muted loop playsinline preload="none" data-src="06-vid10.mp4"><source data-src="06-vid10.mp4" type="video/mp4"></video><button class="kv-play" aria-label="play">&#9658;</button></div>
-<div class="kv-cell"><video class="kv-video" muted loop playsinline preload="none" data-src="06-vid11.mp4"><source data-src="06-vid11.mp4" type="video/mp4"></video><button class="kv-play" aria-label="play">&#9658;</button></div>
-<div class="kv-cell"><video class="kv-video" muted loop playsinline preload="none" data-src="06-vid12.mp4"><source data-src="06-vid12.mp4" type="video/mp4"></video><button class="kv-play" aria-label="play">&#9658;</button></div>
-<div class="kv-cell"><video class="kv-video" muted loop playsinline preload="none" data-src="06-vid13.mp4"><source data-src="06-vid13.mp4" type="video/mp4"></video><button class="kv-play" aria-label="play">&#9658;</button></div>
+      <div class="kv-cell"><img class="kv-video" src="06-vid01.jpg" alt="" loading="lazy"></div>
+<div class="kv-cell"><img class="kv-video" src="06-vid02.jpg" alt="" loading="lazy"></div>
+<div class="kv-cell"><img class="kv-video" src="06-vid03.jpg" alt="" loading="lazy"></div>
+<div class="kv-cell"><img class="kv-video" src="06-vid04.jpg" alt="" loading="lazy"></div>
+<div class="kv-cell"><img class="kv-video" src="06-vid05.jpg" alt="" loading="lazy"></div>
+<div class="kv-cell"><img class="kv-video" src="06-vid06.jpg" alt="" loading="lazy"></div>
+<div class="kv-cell"><img class="kv-video" src="06-vid07.jpg" alt="" loading="lazy"></div>
+<div class="kv-cell"><img class="kv-video" src="06-vid08.jpg" alt="" loading="lazy"></div>
+<div class="kv-cell"><img class="kv-video" src="06-vid09.jpg" alt="" loading="lazy"></div>
+<div class="kv-cell"><img class="kv-video" src="06-vid10.jpg" alt="" loading="lazy"></div>
+<div class="kv-cell"><img class="kv-video" src="06-vid11.jpg" alt="" loading="lazy"></div>
+<div class="kv-cell"><img class="kv-video" src="06-vid12.jpg" alt="" loading="lazy"></div>
+<div class="kv-cell"><img class="kv-video" src="06-vid13.jpg" alt="" loading="lazy"></div>
 
     </div>
   </div>
@@ -314,33 +314,7 @@
     });
   }
 
-  // karaoke video grid: lazy-load + click to play (one at a time)
-  document.querySelectorAll('.kv-cell').forEach(cell => {
-    const video = cell.querySelector('.kv-video');
-    const source = cell.querySelector('source');
-    const btn = cell.querySelector('.kv-play');
-    let loaded = false;
-    function load() {
-      if (loaded) return;
-      source.src = source.dataset.src;
-      video.load();
-      loaded = true;
-    }
-    cell.addEventListener('click', () => {
-      if (video.paused) {
-        // pause any other playing video
-        document.querySelectorAll('.kv-video').forEach(v => {
-          if (v !== video) { v.pause(); v.closest('.kv-cell').classList.remove('playing'); }
-        });
-        load();
-        video.play().catch(()=>{});
-        cell.classList.add('playing');
-      } else {
-        video.pause();
-        cell.classList.remove('playing');
-      }
-    });
-  });
+  // karaoke grid is now static image stills — no playback JS needed.
 
   show(0);
 </script>
