@@ -146,38 +146,24 @@
     .dl-grid { grid-template-columns: 1fr; }
   }
 
-  /* ---- whiskas case study page ---- */
+  /* ---- whiskas case study page: handwriting left, image column right ---- */
   #whiskas { overflow-y: auto; align-items: flex-start; }
-  .wk-wrap { width: 90vw; max-width: 1100px; margin: 0 auto;
-    padding: 6vh 0 10vh; }
-  .wk-head { text-align: center; margin-bottom: 30px; }
-  .wk-headline { width: min(70%, 520px); height: auto; mix-blend-mode: multiply; }
+  .wk-wrap { display: flex; gap: 4vw; width: 92vw; max-width: 1300px;
+    margin: 0 auto; padding: 6vh 0 10vh; align-items: flex-start; }
+  .wk-left { flex: 0 0 26%; position: sticky; top: 6vh; align-self: flex-start; }
+  .wk-headline { width: 95%; height: auto; mix-blend-mode: multiply; margin-bottom: 22px; }
+  .wk-textA { width: 100%; height: auto; mix-blend-mode: multiply; margin-bottom: 28px; }
+  .wk-textB { width: 78%; height: auto; mix-blend-mode: multiply; }
+  .wk-col { flex: 1; display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+  .wk-item { width: 100%; }
+  .wk-item img { width: 100%; height: auto; display: block; }
   .vid-embed { position: relative; padding-top: 56.25%; width: 100%; }
   .vid-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     border: 0; }
-  .wk-film { margin-bottom: 44px; }
-  .wk-intro { display: flex; gap: 3vw; margin-bottom: 40px; align-items: flex-start; }
-  .wk-textA { flex: 0 0 42%; width: 42%; height: auto; mix-blend-mode: multiply; }
-  .wk-intro-right { flex: 1; display: flex; flex-direction: column; gap: 24px; }
-  .wk-hero { width: 100%; height: auto; display: block; }
-  .wk-textB { width: 80%; height: auto; mix-blend-mode: multiply; align-self: center; }
-  .wk-key { width: 100%; height: auto; display: block; margin-bottom: 30px; }
-  .wk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
-    margin-bottom: 50px; }
-  .wk-img { width: 100%; height: auto; object-fit: cover; display: block; }
-  .wk-full, .wk-wide { grid-column: 1 / -1; }
-  .wk-half { grid-column: span 1; }
-  .wk-sub { font-family: Georgia, serif; font-weight: normal; font-size: 14px;
-    letter-spacing: 3px; text-transform: uppercase; color: #999;
-    text-align: center; margin-bottom: 20px; }
-  .wk-socials { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
-  .wk-social { width: 100%; }
   @media (max-width: 760px) {
-    .wk-intro { flex-direction: column; }
-    .wk-textA { flex: none; width: 70%; }
-    .wk-grid { grid-template-columns: 1fr; }
-    .wk-half { grid-column: 1 / -1; }
-    .wk-socials { grid-template-columns: 1fr; }
+    .wk-wrap { flex-direction: column; }
+    .wk-left { flex: none; width: 80%; position: static; }
+    .wk-col { width: 100%; }
   }
 </style>
 </head>
@@ -309,32 +295,30 @@
   </div>
 </section><section class="page" id="whiskas" data-page="whiskas">
   <div class="wk-wrap">
-    <header class="wk-head">
+    <div class="wk-left">
       <img class="wk-headline" src="14-headline.png" alt="The brief. Whiskas doesn't kill cats.">
-    </header>
-    <div class="wk-film"><div class="vid-embed"><iframe src="https://player.vimeo.com/video/1197480507?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="Bone Crusher"></iframe></div></div>
-    <div class="wk-intro">
       <img class="wk-textA" src="14-textA.png" alt="">
-      <div class="wk-intro-right">
-        <img class="wk-hero" src="14-hero.jpg" alt="Bone Crusher can">
-        <img class="wk-textB" src="14-text-B.png" alt="">
-      </div>
+      <img class="wk-textB" src="14-text-B.png" alt="">
     </div>
-    <img class="wk-key" src="14-img01.jpg" alt="Bone Crusher keyplate">
-    <div class="wk-grid">
-      <img class="wk-img wk-full" src="14-img03.jpg" alt="">
-      <img class="wk-img wk-full" src="14-img04.jpg" alt="">
-      <img class="wk-img wk-full" src="14-img05.jpg" alt="">
-      <img class="wk-img wk-full" src="14-img02.jpg" alt="">
-      <img class="wk-img wk-wide" src="14-img06.jpg" alt="">
-      <img class="wk-img wk-wide" src="14-img07.jpg" alt="">
-      <img class="wk-img wk-wide" src="14-img08.jpg" alt="">
-      <img class="wk-img wk-half" src="14-img09.jpg" alt="">
-      <img class="wk-img wk-half" src="14-img10.jpg" alt="">
-      <img class="wk-img wk-half" src="14-img11.jpg" alt="">
+    <div class="wk-col">
+      <div class="wk-item"><img src="14-hero.jpg" alt=""></div>
+<div class="wk-item wk-film-item"><div class="vid-embed"><iframe src="https://player.vimeo.com/video/1197480507?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="Bone Crusher"></iframe></div></div>
+<div class="wk-item"><img src="14-img01.jpg" alt=""></div>
+<div class="wk-item wk-film-item"><div class="vid-embed"><iframe src="https://player.vimeo.com/video/1197486125?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="Bone Crusher"></iframe></div></div>
+<div class="wk-item"><img src="14-img02.jpg" alt=""></div>
+<div class="wk-item"><img src="14-img03.jpg" alt=""></div>
+<div class="wk-item"><img src="14-img04.jpg" alt=""></div>
+<div class="wk-item"><img src="14-img05.jpg" alt=""></div>
+<div class="wk-item"><img src="14-img06.jpg" alt=""></div>
+<div class="wk-item"><img src="14-img07.jpg" alt=""></div>
+<div class="wk-item"><img src="14-img08.jpg" alt=""></div>
+<div class="wk-item wk-film-item"><div class="vid-embed"><iframe src="https://player.vimeo.com/video/1197482727?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="Bone Crusher"></iframe></div></div>
+<div class="wk-item wk-film-item"><div class="vid-embed"><iframe src="https://player.vimeo.com/video/1197482728?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="Bone Crusher"></iframe></div></div>
+<div class="wk-item"><img src="14-img09.jpg" alt=""></div>
+<div class="wk-item"><img src="14-img10.jpg" alt=""></div>
+<div class="wk-item"><img src="14-img11.jpg" alt=""></div>
+
     </div>
-    <h3 class="wk-sub">Social</h3>
-    <div class="wk-socials"><div class="wk-social"><div class="vid-embed"><iframe src="https://player.vimeo.com/video/1197482727?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="Bone Crusher"></iframe></div></div><div class="wk-social"><div class="vid-embed"><iframe src="https://player.vimeo.com/video/1197482728?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="Bone Crusher"></iframe></div></div><div class="wk-social"><div class="vid-embed"><iframe src="https://player.vimeo.com/video/1197486125?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" referrerpolicy="strict-origin-when-cross-origin" title="Bone Crusher"></iframe></div></div></div>
   </div>
 </section>
 </main>
