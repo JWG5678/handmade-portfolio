@@ -162,7 +162,11 @@
     border: 0; }
   @media (max-width: 760px) {
     .wk-wrap { flex-direction: column; }
-    .wk-left { flex: none; width: 80%; position: static; }
+    .wk-left { flex: none !important; width: 100%; position: static;
+      display: block; }
+    .wk-headline { width: 80%; display: block; }
+    .wk-textA { width: 92%; display: block; }
+    .wk-textB { width: 75%; display: block; }
     .wk-col { width: 100%; }
   }
 </style>
